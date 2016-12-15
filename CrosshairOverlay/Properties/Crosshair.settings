@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CrosshairOverlay.Properties" GeneratedClassName="Crosshair">
+  <Profiles />
+  <Settings>
+    <Setting Name="ImageUri" Type="System.Uri" Scope="User">
+      <Value Profile="(Default)">pack://application:,,,/Resources/Crosshairs/Basic 1.png</Value>
+    </Setting>
+    <Setting Name="PosX" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PosY" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Scale" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Alpha" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="Rotate" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="VerticalAlignment" Type="System.Windows.VerticalAlignment" Scope="User">
+      <Value Profile="(Default)">Center</Value>
+    </Setting>
+    <Setting Name="HorizontalAlignment" Type="System.Windows.HorizontalAlignment" Scope="User">
+      <Value Profile="(Default)">Center</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

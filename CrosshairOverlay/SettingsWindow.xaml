@@ -1,0 +1,100 @@
+﻿<metro:MetroWindow
+    x:Class="CrosshairOverlay.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:properties="clr-namespace:CrosshairOverlay.Properties"
+    xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    DataContext="{x:Static properties:Crosshair.Default}"
+    Title="Crosshair Overlay"
+    Height="340.345" Width="300">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Crosshairs/DefaultCrosshairs.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+
+        <GroupBox Grid.Column="0" Grid.ColumnSpan="4"
+                  Grid.Row="0" Grid.RowSpan="1">
+            <GroupBox.Header>
+                <TextBlock Text="Image"/>
+            </GroupBox.Header>
+            <StackPanel>
+                <ListView ItemsSource="{StaticResource DefaultCrosshairUriArray}"
+                  SelectedItem="{Binding Path=ImageUri, Mode=TwoWay}"
+                  SelectedIndex="0">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Column="0" Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock Text="Scale"/>
+            </GroupBox.Header>
+            <metro:NumericUpDown Value="{Binding Path=Scale, Mode=TwoWay}"
+                                 StringFormat="F1"
+                                 Interval="0.1"
+                                 Minimum="0.1"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock Text="Rotate"/>
+            </GroupBox.Header>
+            <metro:NumericUpDown Value="{Binding Path=Rotate, Mode=TwoWay}"
+                                 StringFormat="F0"
+                                 Interval="1"
+                                 Minimum="0" Maximum="360"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="0" Grid.Row="2">
+            <GroupBox.Header>
+                <TextBlock Text="X Offset"/>
+            </GroupBox.Header>
+            <metro:NumericUpDown Value="{Binding Path=PosX, Mode=TwoWay}"
+                                 StringFormat="N0"
+                                 Interval="1"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="2">
+            <GroupBox.Header>
+                <TextBlock Text="Y Offset"/>
+            </GroupBox.Header>
+            <metro:NumericUpDown Value="{Binding Path=PosY, Mode=TwoWay}"
+                                 StringFormat="N0"
+                                 Interval="1"/>
+        </GroupBox>
+
+        <Button Grid.Row="3" Grid.Column="0" Content="Save" Click="SaveButton"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Defaults" Click="DefaultsButton" />
+
+    </Grid>
+
+</metro:MetroWindow>
