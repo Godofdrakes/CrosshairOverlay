@@ -12,28 +12,14 @@ namespace CrosshairOverlay
     {
         public SettingsWindow() { InitializeComponent(); }
 
-        private void Slider_MouseWheel( object sender, System.Windows.Input.MouseWheelEventArgs e )
+        private void SaveSettings( object sender, RoutedEventArgs e )
         {
-            Slider slider = sender as Slider;
-            if( e.Delta > 0 )
-            {
-                slider.Value += slider.TickFrequency;
-            }
-            else
-            {
-                slider.Value -= slider.TickFrequency;
-            }
-            slider.Value = Math.Round( slider.Value, 1 );
+            Properties.Crosshair.Default.Save();
         }
 
-        private void SaveButton( object sender, RoutedEventArgs e )
+        private void ResetSettings( object sender, RoutedEventArgs e )
         {
-
-        }
-
-        private void DefaultsButton( object sender, RoutedEventArgs e )
-        {
-
+            Properties.Crosshair.Default.Reset();
         }
     }
 }

@@ -79,7 +79,7 @@
                 <TextBlock Text="X Offset"/>
             </GroupBox.Header>
             <metro:NumericUpDown Value="{Binding Path=PosX, Mode=TwoWay}"
-                                 StringFormat="N0"
+                                 StringFormat="F0"
                                  Interval="1"/>
         </GroupBox>
 
@@ -88,12 +88,12 @@
                 <TextBlock Text="Y Offset"/>
             </GroupBox.Header>
             <metro:NumericUpDown Value="{Binding Path=PosY, Mode=TwoWay}"
-                                 StringFormat="N0"
+                                 StringFormat="F0"
                                  Interval="1"/>
         </GroupBox>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="Save" Click="SaveButton"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="Defaults" Click="DefaultsButton" />
+        <Button Grid.Row="3" Grid.Column="0" Content="Save" Click="SaveSettings"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Reset" Click="ResetSettings" />
 
     </Grid>
 
