@@ -24,5 +24,10 @@ namespace CrosshairOverlay
         {
             Properties.Crosshair.Default.Reset();
         }
+
+        private void CloseSettings(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
