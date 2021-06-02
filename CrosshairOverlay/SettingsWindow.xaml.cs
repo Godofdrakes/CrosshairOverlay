@@ -10,7 +10,10 @@ namespace CrosshairOverlay
     /// </summary>
     public partial class SettingsWindow
     {
-        public SettingsWindow() { InitializeComponent(); }
+        public SettingsWindow()
+        {
+            InitializeComponent();
+        }
 
         private void SaveSettings( object sender, RoutedEventArgs e )
         {

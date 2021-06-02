@@ -10,12 +10,12 @@ namespace CrosshairOverlay
     /// </summary>
     public partial class CrosshairWindow : Window
     {
-        private readonly WindowInteropHelper helper;
+        private readonly WindowInteropHelper _helper;
 
         public CrosshairWindow()
         {
             InitializeComponent();
-            helper = new WindowInteropHelper( this );
+            _helper = new WindowInteropHelper( this );
         }
 
         /// <inheritdoc />
@@ -24,8 +24,13 @@ namespace CrosshairOverlay
             base.OnSourceInitialized( e );
 
             // Register this window as 'transparent' (click through) with the Win32 api
-            var extendedStyle = User32.GetWindowLong( helper.Handle, User32.GWL_EXSTYLE );
-            User32.SetWindowLong( helper.Handle, User32.GWL_EXSTYLE, extendedStyle | User32.WS_EX_TRANSPARENT );
+            var extendedStyle = User32.GetWindowLong( _helper.Handle, User32.GWL_EXSTYLE );
+
+            extendedStyle |= User32.WS_EX_TOOLWINDOW;
+            extendedStyle |= User32.WS_EX_TOPMOST;
+            extendedStyle |= User32.WS_EX_TRANSPARENT;
+            
+            User32.SetWindowLong( _helper.Handle, User32.GWL_EXSTYLE, extendedStyle );
         }
     }
 }

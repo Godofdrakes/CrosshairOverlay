@@ -8,18 +8,18 @@ namespace CrosshairOverlay
     /// </summary>
     public partial class App : Application
     {
-        private CrosshairWindow crosshairWindow;
-        private SettingsWindow settingsWindow;
+        private CrosshairWindow _crosshairWindow;
+        private SettingsWindow _settingsWindow;
 
         private void App_OnStartup( object sender, StartupEventArgs e )
         {
-            settingsWindow = new SettingsWindow();
-            crosshairWindow = new CrosshairWindow();
+            _settingsWindow = new SettingsWindow();
+            _crosshairWindow = new CrosshairWindow();
 
-            MainWindow = settingsWindow; // #TODO: Better handling of application shutdown
+            MainWindow = _settingsWindow; // #TODO: Better handling of application shutdown
 
-            settingsWindow.Show();
-            crosshairWindow.Show();
+            _settingsWindow.Show();
+            _crosshairWindow.Show();
         }
 
         private void App_OnDispatcherUnhandledException( object sender, DispatcherUnhandledExceptionEventArgs e )
