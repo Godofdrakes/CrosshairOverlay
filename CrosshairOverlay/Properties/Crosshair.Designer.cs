@@ -12,7 +12,7 @@ namespace CrosshairOverlay.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Crosshair : global::System.Configuration.ApplicationSettingsBase {
         
         private static Crosshair defaultInstance = ((Crosshair)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Crosshair())));
@@ -25,7 +25,6 @@ namespace CrosshairOverlay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("pack://application:,,,/Resources/Crosshairs/Basic 1.png")]
         public global::System.Uri ImageUri {
             get {
                 return ((global::System.Uri)(this["ImageUri"]));
@@ -74,12 +73,12 @@ namespace CrosshairOverlay.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
-        public double Alpha {
+        public double Opacity {
             get {
-                return ((double)(this["Alpha"]));
+                return ((double)(this["Opacity"]));
             }
             set {
-                this["Alpha"] = value;
+                this["Opacity"] = value;
             }
         }
         
@@ -92,30 +91,6 @@ namespace CrosshairOverlay.Properties {
             }
             set {
                 this["Rotate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::System.Windows.VerticalAlignment VerticalAlignment {
-            get {
-                return ((global::System.Windows.VerticalAlignment)(this["VerticalAlignment"]));
-            }
-            set {
-                this["VerticalAlignment"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::System.Windows.HorizontalAlignment HorizontalAlignment {
-            get {
-                return ((global::System.Windows.HorizontalAlignment)(this["HorizontalAlignment"]));
-            }
-            set {
-                this["HorizontalAlignment"] = value;
             }
         }
     }
