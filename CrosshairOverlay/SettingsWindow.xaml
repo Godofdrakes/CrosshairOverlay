@@ -4,10 +4,33 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:properties="clr-namespace:CrosshairOverlay.Properties"
 	xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns:crosshairOverlay="clr-namespace:CrosshairOverlay"
 	DataContext="{x:Static properties:Crosshair.Default}"
 	Height="340" Width="300"
 	ShowCloseButton="False"
 	ResizeMode="NoResize">
+
+	<metro:MetroWindow.Resources>
+		<ResourceDictionary>
+			<Style TargetType="TextBlock">
+				<Setter Property="FontFamily" Value="./Resources/kenney-game-assets-1/Fonts/#Kenney Mini Square" />
+				<Setter Property="FontSize" Value="14" />
+				<Setter Property="Foreground" Value="White" />
+			</Style>
+			<Style TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button}">
+				<Setter Property="FontFamily" Value="./Resources/kenney-game-assets-1/Fonts/#Kenney Bold" />
+				<Style.Triggers>
+					<DataTrigger Binding="{Binding ImageUri, Converter={x:Static crosshairOverlay:FileExistsConverter.Instance}}" Value="False">
+						<Setter Property="Foreground" Value="Red" />
+						<Setter Property="ToolTip" Value="Failed to load image" />
+					</DataTrigger>
+				</Style.Triggers>
+			</Style>
+			<Style TargetType="metro:NumericUpDown">
+				<Setter Property="FontFamily" Value="./Resources/kenney-game-assets-1/Fonts/#Kenney Bold" />
+			</Style>
+		</ResourceDictionary>
+	</metro:MetroWindow.Resources>
 
 	<metro:MetroWindow.LeftWindowCommands>
 		<metro:WindowCommands>

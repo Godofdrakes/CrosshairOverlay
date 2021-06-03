@@ -24,11 +24,6 @@ namespace CrosshairOverlay
 				Settings.Default.ImageUri = DefaultCrosshairUri;
 			}
 
-			if (!File.Exists(Settings.Default.ImageUri.LocalPath))
-			{
-				Settings.Default.ImageUri = DefaultCrosshairUri;
-			}
-
 			_settingsWindow = new SettingsWindow();
 			_crosshairWindow = new CrosshairWindow();
 

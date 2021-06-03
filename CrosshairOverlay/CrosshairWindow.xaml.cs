@@ -26,8 +26,8 @@ namespace CrosshairOverlay
             // Register this window as 'transparent' (click through) with the Win32 api
             var extendedStyle = User32.GetWindowLong( _helper.Handle, User32.GWL_EXSTYLE );
 
+            extendedStyle |= User32.WS_EX_NOACTIVATE;
             extendedStyle |= User32.WS_EX_TOOLWINDOW;
-            extendedStyle |= User32.WS_EX_TOPMOST;
             extendedStyle |= User32.WS_EX_TRANSPARENT;
             
             User32.SetWindowLong( _helper.Handle, User32.GWL_EXSTYLE, extendedStyle );
