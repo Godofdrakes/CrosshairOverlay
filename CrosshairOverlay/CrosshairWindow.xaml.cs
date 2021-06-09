@@ -10,8 +10,21 @@ namespace CrosshairOverlay
     /// </summary>
     public partial class CrosshairWindow : Window
     {
-        private readonly WindowInteropHelper _helper;
+	    public static CrosshairWindow OpenWindow()
+	    {
+		    if (_crosshairWindow == null)
+		    {
+			    _crosshairWindow = new CrosshairWindow();
+			    _crosshairWindow.Show();
+		    }
+		    
+		    return _crosshairWindow;
+	    }
 
+	    private static CrosshairWindow? _crosshairWindow;
+	    
+        private readonly WindowInteropHelper _helper;
+        
         public CrosshairWindow()
         {
             InitializeComponent();

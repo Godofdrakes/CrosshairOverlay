@@ -25,12 +25,13 @@ namespace CrosshairOverlay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Uri ImageUri {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FilePath {
             get {
-                return ((global::System.Uri)(this["ImageUri"]));
+                return ((string)(this["FilePath"]));
             }
             set {
-                this["ImageUri"] = value;
+                this["FilePath"] = value;
             }
         }
         

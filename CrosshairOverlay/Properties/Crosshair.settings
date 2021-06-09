@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CrosshairOverlay.Properties" GeneratedClassName="Crosshair">
   <Profiles />
   <Settings>
-    <Setting Name="ImageUri" Type="System.Uri" Scope="User">
+    <Setting Name="FilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="PosX" Type="System.Double" Scope="User">

@@ -40,6 +40,8 @@
 	<ItemGroup>
 		<Reference Include="System" />
 		<Reference Include="System.Data" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Windows.Forms" />
 		<Reference Include="System.Xml" />
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="System.Core" />
@@ -54,12 +56,12 @@
 		<Reference Include="PresentationFramework" />
 	</ItemGroup>
 	<ItemGroup>
-		<ApplicationDefinition Include="App.xaml">
+		<ApplicationDefinition Include="CrosshairOverlayApplication.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</ApplicationDefinition>
-		<Compile Include="App.xaml.cs">
-			<DependentUpon>App.xaml</DependentUpon>
+		<Compile Include="CrosshairOverlayApplication.xaml.cs">
+			<DependentUpon>CrosshairOverlayApplication.xaml</DependentUpon>
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="FileExistsConverter.cs" />
@@ -136,6 +138,10 @@
 	<ItemGroup Label="KenneyFonts">
 		<Resource Include="Resources\kenney-game-assets-1\Fonts\*.ttf" />
 	</ItemGroup>
+    <ItemGroup Label="KenneyCrosshairs">
+        <Resource Include="Resources\kenney-game-assets-3\Crosshairs\*.png" />
+        <Resource Include="Resources\kenney-game-assets-3\Crosshairs\*.ico" />
+    </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="MahApps.Metro" Version="2.4.5" />
 	</ItemGroup>

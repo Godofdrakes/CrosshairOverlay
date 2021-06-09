@@ -25,7 +25,7 @@
 			<RowDefinition />
 		</Grid.RowDefinitions>
 
-		<Image Source="{Binding Path=ImageUri, Mode=OneWay}"
+		<Image Source="{Binding Path=FilePath, Mode=OneWay}"
 			   Opacity="{Binding Path=Opacity, Mode=OneWay}"
 			   SnapsToDevicePixels="True"
 			   Grid.Column="1" Grid.Row="1"

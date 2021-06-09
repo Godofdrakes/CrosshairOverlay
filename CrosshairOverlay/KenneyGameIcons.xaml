@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	
 	<BitmapImage x:Key="KenneyCross" UriSource="Resources/kenney-game-assets-1/Game Icons/cross.png"/>
+	<BitmapImage x:Key="KenneyGear" UriSource="Resources/kenney-game-assets-1/Game Icons/gear.png"/>
 	<BitmapImage x:Key="KenneyReturn" UriSource="Resources/kenney-game-assets-1/Game Icons/return.png"/>
 	<BitmapImage x:Key="KenneySave" UriSource="Resources/kenney-game-assets-1/Game Icons/save.png"/>
 	<BitmapImage x:Key="KenneyWrench" UriSource="Resources/kenney-game-assets-1/Game Icons/wrench.png"/>

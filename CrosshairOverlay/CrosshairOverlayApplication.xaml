@@ -1,14 +1,13 @@
-﻿<Application x:Class="CrosshairOverlay.App"
+﻿<Application x:Class="CrosshairOverlay.CrosshairOverlayApplication"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CrosshairOverlay"
              Startup="App_OnStartup"
-             DispatcherUnhandledException="App_OnDispatcherUnhandledException"
-             ShutdownMode="OnMainWindowClose">
-    <Application.Resources>
+             DispatcherUnhandledException="App_OnDispatcherUnhandledException">
+	<Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-	            <ResourceDictionary Source="KenneyGameIcons.xaml"/>
+	        <ResourceDictionary.MergedDictionaries>
+	            <ResourceDictionary Source="KenneyGameIcons.xaml" />
 	            <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />

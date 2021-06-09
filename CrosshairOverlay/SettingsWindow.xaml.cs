@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,22 @@ namespace CrosshairOverlay
 	/// </summary>
 	public partial class SettingsWindow
 	{
+		public static void OpenWindow()
+		{
+			if (_settingsWindow != null)
+			{
+				_settingsWindow.Activate();
+			}
+			else
+			{
+				_settingsWindow = new SettingsWindow();
+				_settingsWindow.Closing += (sender, args) => _settingsWindow = null;
+				_settingsWindow.Show();
+			}
+		}
+
+		private static SettingsWindow? _settingsWindow;
+		
 		public SettingsWindow()
 		{
 			InitializeComponent();
@@ -27,12 +44,12 @@ namespace CrosshairOverlay
 		private void ResetSettings( object sender, RoutedEventArgs e )
 		{
 			Settings.Default.Reset();
-			Settings.Default.ImageUri = App.DefaultCrosshairUri;
+			Settings.Default.FilePath = CrosshairOverlayApplication.DefaultCrosshair;
 		}
 
 		private void CloseSettings(object sender, RoutedEventArgs e)
 		{
-			Application.Current.Shutdown();
+			this.Close();
 		}
 
 		private void BrowseForImage(object sender, RoutedEventArgs e)
@@ -41,14 +58,14 @@ namespace CrosshairOverlay
 			{
 				Multiselect = false,
 				Filter = "Portable Network Graphics (*.png)|*.png",
-				InitialDirectory = Path.GetDirectoryName(Settings.Default.ImageUri.LocalPath),
+				InitialDirectory = Path.GetDirectoryName(Settings.Default.FilePath),
 			};
 			
-			dialog.CustomPlaces.Add(new FileDialogCustomPlace(App.DefaultCrosshairDir));
+			dialog.CustomPlaces.Add(new FileDialogCustomPlace(CrosshairOverlayApplication.DefaultCrosshairDir));
 
 			if (dialog.ShowDialog() == true)
 			{
-				Properties.Crosshair.Default.ImageUri = new Uri(dialog.FileName);
+				Properties.Crosshair.Default.FilePath = dialog.FileName;
 			}
 		}
 	}
